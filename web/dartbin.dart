@@ -1,16 +1,13 @@
 import 'dart:html';
 
-void main() {
-  querySelector("#sample_text_id")
-      ..text = "Click me!"
-      ..onClick.listen(reverseText);
-}
+import 'package:ace/ace.dart' as ace;
+import 'package:ace/proxy.dart';
 
-void reverseText(MouseEvent event) {
-  var text = querySelector("#sample_text_id").text;
-  var buffer = new StringBuffer();
-  for (int i = text.length - 1; i >= 0; i--) {
-    buffer.write(text[i]);
-  }
-  querySelector("#sample_text_id").text = buffer.toString();
+void main() {
+  ace.implementation = ACE_PROXY_IMPLEMENTATION;
+  ace.Editor editor = ace.edit(querySelector("#editor"));
+  //editor.theme = new ace.Theme.named(ace.Theme.ECLIPSE);
+  //editor.session.mode = new ace.Mode.named(ace.Mode.DART);
+  //editor.setValue("Test");
+  
 }
