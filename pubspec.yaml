@@ -3,3 +3,5 @@ description: A sample web application
 dependencies:
   ace: any
   browser: any
+  redstone: any
+  redstone_mapper_mongo: any
